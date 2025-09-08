@@ -10,7 +10,7 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   display: flex;
   flex-direction: column;
-  gap: 80px;
+  align-items: center;
 }
 
 h1 {
@@ -22,11 +22,36 @@ h3 {
   font-size: 16px;
 }
 
+a {
+  text-decoration: none;
+}
+
+header > img {
+  margin-bottom: 12px;
+}
+
+.header-link {
+  color: rgb(26, 126, 226);
+  background: none;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.header-link:hover {
+  opacity: 0.8;
+}
+
 strong {
   font-weight: bold;
 }
 
+#randomized-box {
+  text-align: center;
+  margin: 16px;
+  font-weight: bold;
+}
+
 .main-menu {
+  margin: 36px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -43,7 +68,6 @@ strong {
   font-size: large;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  text-decoration: none;
 }
 
 .blue-button:hover {
@@ -65,7 +89,7 @@ footer {
   align-items: center;
   justify-content: center;
   gap: 5px;
-  position: absolute;
+  position: fixed;
   bottom: 5px;
   width: 100%;
 }
@@ -98,7 +122,7 @@ footer {
 
 .column > * {
   text-align: center;
-  padding: 24px;
+  padding: 20px;
   background-color: rgb(228, 228, 228);
 }
 
@@ -114,4 +138,11 @@ button {
 
 button:hover {
   opacity: 0.8;
+}
+#countdown {
+  margin: 24px 0px 12px 0px;
+}
+
+#score-menu {
+  text-align: center;
 }

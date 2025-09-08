@@ -7,7 +7,14 @@
     <title>Projet spot the square</title>
   </head>
   <body>
-    <h1>Chrono</h1>
+    <header>
+      <img src="../images/chess_logo.png" id="homepage-logo-header" />
+      <a href="index.html" class="header-link">revenir à l'accueil</a>
+      <button id="startButton" class="header-link">commencer</button>
+    </header>
+
+    <h2 id="randomized-box">??</h2>
+
     <div class="chessboard-container">
       <div class="chessboard">
         <div class="column">
@@ -92,6 +99,20 @@
         </div>
       </div>
     </div>
+
+    <div id="countdown">
+      <div class="countdown-value">00:00</div>
+    </div>
+
+    <div id="score-menu">
+      <p id="score">Score: <span id="score-number">0</span></p>
+      <p id="best-score">Meilleur score: <span "best-score-number">0</span></p>
+    </div>
+    
+    <footer>
+      <img src="../images/chess_logo.png" id="homepage-logo-footer" />
+      <h3><strong>SPOT THE SQUARE</strong> 2025</h3>
+    </footer>
     <script src="../js/index.js"></script>
   </body>
 </html>
