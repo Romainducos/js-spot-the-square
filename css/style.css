@@ -6,10 +6,17 @@ body {
   height: 100%;
 }
 
+.chessboard-container {
+  display: flex;
+  justify-content: center;
+}
+
 .chessboard {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  background-color: transparent;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .column {
@@ -20,11 +27,11 @@ body {
 .column > * {
   text-align: center;
   padding: 24px;
-  background-color: rgb(215, 215, 215);
+  background-color: rgb(228, 228, 228);
 }
 
 .colored-box {
-  background-color: rgb(70, 70, 199);
+  background-color: dodgerblue;
 }
 
 button {
