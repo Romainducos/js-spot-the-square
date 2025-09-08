@@ -1,4 +1,4 @@
-import {randomizeBox} from './boxRandomizer.js';
+import {currentBox, randomizeBox} from './boxRandomizer.js';
 
 function getDurationFromUrl() {
   const params = new URLSearchParams(window.location.search);
@@ -26,13 +26,17 @@ var timerRunning = false;
 ///                                                                 ///
 ///////////////////////////////////////////////////////////////////////
 
+const score = document.getElementById("score-number")
+
 $("#startButton").click(function () {
-  randomizeBox()
+  score.innerHTML = "0"
 
   if (!timerRunning) {
     timer.start({ countdown: true, startValues: { minutes: duration } });
     timerRunning = true;
     $(this).text("Recommencer");
+
+    randomizeBox()
   } else {
     timer.reset();
     $("#countdown .countdown-value").html(
@@ -61,6 +65,12 @@ const allTheBox = document.getElementsByTagName("button");
 
 const boxClicked = (e) => {
   console.log(e.target.id);
+
+  // checking if player clicked on the correct box:
+  if (e.target.id === currentBox){
+    randomizeBox()
+    score.innerHTML = parseInt(score.innerHTML)+1
+  }
 };
 
 for (let box of allTheBox) {
