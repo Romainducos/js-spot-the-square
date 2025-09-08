@@ -1,4 +1,6 @@
-function randomizeBox(){
+export const randomizedBox = document.getElementById("randomized-box")
+
+export function randomizeBox(){
     // Defining box's letters/numbers possibilities array and result variable
     let letters = 'abcdefgh'
     letters = letters.split('')
@@ -10,5 +12,6 @@ function randomizeBox(){
     result += letters[Math.floor(Math.random() * 8)]
     result += numbers[Math.floor(Math.random() * 8)] //note: we're using a numbers array so as to exclude 0 from possibles values
 
+    randomizedBox.innerHTML = result
     return result;
 }

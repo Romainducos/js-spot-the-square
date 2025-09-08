@@ -1,3 +1,5 @@
+import {randomizeBox} from './boxRandomizer.js';
+
 function getDurationFromUrl() {
   const params = new URLSearchParams(window.location.search);
   const duration = parseInt(params.get("duration"), 10);
@@ -17,7 +19,16 @@ $("#countdown .countdown-value").html(
 
 var timerRunning = false;
 
+
+///////////////////////////////////////////////////////////////////////
+///                                                                 ///
+///                 GAME START                                      ///
+///                                                                 ///
+///////////////////////////////////////////////////////////////////////
+
 $("#startButton").click(function () {
+  randomizeBox()
+
   if (!timerRunning) {
     timer.start({ countdown: true, startValues: { minutes: duration } });
     timerRunning = true;
@@ -31,6 +42,7 @@ $("#startButton").click(function () {
     timerRunning = false;
     $(this).text("Commencer");
   }
+
 });
 
 timer.addEventListener("secondsUpdated", function (e) {
