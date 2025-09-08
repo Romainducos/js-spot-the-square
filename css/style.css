@@ -1,63 +1,106 @@
 @import url(reset.css);
 
-body{
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    display: flex;
-    flex-direction: column;
-    gap:80px;
-    margin: 20px;
+html,
+body {
+  width: 100%;
+  height: 100%;
 }
 
-h1{
-    font-size: xx-large;
-    font-weight: bold;
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  margin: 20px;
 }
 
-h3{
-    font-size: medium;
+h1 {
+  font-size: xx-large;
+  font-weight: bold;
 }
 
-
-strong{
-    font-weight: bold;
+h3 {
+  font-size: medium;
 }
 
-.main-menu{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+strong {
+  font-weight: bold;
 }
 
-.blue-button{
-    background-color:dodgerblue;
-    color: white;
-    width: 200px;
-    height: 50px;
-    align-content: center;
-    text-align: center;
-    font-size: large;
-    border-radius: 10px;
+.main-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
-header{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
+.blue-button {
+  background-color: dodgerblue;
+  color: white;
+  width: 200px;
+  height: 50px;
+  align-content: center;
+  text-align: center;
+  font-size: large;
+  border-radius: 10px;
 }
 
-footer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
 }
 
-#homepage-logo-header{
-    width: 60px;
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
 }
 
-#homepage-logo-footer{
-    width: 30px;
+#homepage-logo-header {
+  width: 60px;
+}
+
+#homepage-logo-footer {
+  width: 30px;
+}
+
+.chessboard-container {
+  display: flex;
+  justify-content: center;
+}
+
+.chessboard {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: transparent;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.column > * {
+  text-align: center;
+  padding: 24px;
+  background-color: rgb(228, 228, 228);
+}
+
+.colored-box {
+  background-color: dodgerblue;
+}
+
+button {
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
 }
