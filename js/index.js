@@ -1,17 +1,32 @@
+function getDurationFromUrl() {
+  const params = new URLSearchParams(window.location.search);
+  const duration = parseInt(params.get("duration"), 10);
+  if (!isNaN(duration) && duration > 0) {
+    return duration;
+  }
+  return 2; // valeur par défaut
+}
+
 var timer = new easytimer.Timer();
 
-$("#countdown .countdown-value").html("02:00");
+var duration = getDurationFromUrl();
+
+$("#countdown .countdown-value").html(
+  duration.toString().padStart(2, "0") + ":00"
+);
 
 var timerRunning = false;
 
 $("#startButton").click(function () {
   if (!timerRunning) {
-    timer.start({ countdown: true, startValues: { minutes: 2 } });
+    timer.start({ countdown: true, startValues: { minutes: duration } });
     timerRunning = true;
     $(this).text("Recommencer");
   } else {
     timer.reset();
-    $("#countdown .countdown-value").html("02:00");
+    $("#countdown .countdown-value").html(
+      duration.toString().padStart(2, "0") + ":00"
+    );
     timer.pause();
     timerRunning = false;
     $(this).text("Commencer");
@@ -30,7 +45,7 @@ timer.addEventListener("targetAchieved", function (e) {
   $(".startButton").text("Start");
 });
 
-const allTheBox = document.querySelectorAll(".chessboard button");
+const allTheBox = document.getElementsByTagName("button");
 
 const boxClicked = (e) => {
   console.log(e.target.id);
