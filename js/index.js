@@ -30,7 +30,7 @@ timer.addEventListener("targetAchieved", function (e) {
   $(".startButton").text("Start");
 });
 
-const allTheBox = document.getElementsByTagName("button");
+const allTheBox = document.querySelectorAll(".chessboard button");
 
 const boxClicked = (e) => {
   console.log(e.target.id);
