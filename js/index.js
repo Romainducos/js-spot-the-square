@@ -1,3 +1,4 @@
+import { currentBox, randomizeBox, randomizedBox} from "../js/boxRandomizer.js";
 
 function getDurationFromUrl() {
   const params = new URLSearchParams(window.location.search);
@@ -25,23 +26,25 @@ if (mode === "survival") {
 
   var timerRunning = false;
 
-  $("#startButton").off().click(function () {
-    score.innerHTML = "0";
-    if (!timerRunning) {
-      timer.start({ countdown: true, startValues: { minutes: duration } });
-      timerRunning = true;
-      $(this).text("Recommencer");
-      randomizeBox();
-    } else {
-      timer.reset();
-      $("#countdown .countdown-value").html(
-        duration.toString().padStart(2, "0") + ":00"
-      );
-      timer.pause();
-      timerRunning = false;
-      $(this).text("Commencer");
-    }
-  });
+  $("#startButton")
+    .off()
+    .click(function () {
+      score.innerHTML = "0";
+      if (!timerRunning) {
+        timer.start({ countdown: true, startValues: { minutes: duration } });
+        timerRunning = true;
+        $(this).text("Recommencer");
+        randomizeBox();
+      } else {
+        timer.reset();
+        $("#countdown .countdown-value").html(
+          duration.toString().padStart(2, "0") + ":00"
+        );
+        timer.pause();
+        timerRunning = false;
+        $(this).text("Commencer");
+      }
+    });
 
   timer.addEventListener("secondsUpdated", function (e) {
     $("#countdown .countdown-value").html(
@@ -71,26 +74,43 @@ function survivalMode() {
   let minTime = 1;
   let timeDecrease = 0.2;
   let currentTimeout = null;
+  let currentInterval = null;
   let gameOver = false;
   let lives = 3;
+  let roundStart = null;
 
   score.innerHTML = "0";
   $("#startButton").hide();
   $("#countdown .countdown-value").html(survivalTime.toFixed(2) + "s | Vies : " + lives);
 
+  function updateCountdownDisplay() {
+    if (!roundStart) return;
+    const elapsed = (Date.now() - roundStart) / 1000;
+    const remaining = Math.max(0, survivalTime - elapsed);
+    $("#countdown .countdown-value").html(remaining.toFixed(2) + "s | Vies : " + lives);
+  }
+
   function nextRound() {
     if (gameOver) return;
     randomizeBox();
+    roundStart = Date.now();
     $("#countdown .countdown-value").html(survivalTime.toFixed(2) + "s | Vies : " + lives);
 
     if (currentTimeout) clearTimeout(currentTimeout);
+    if (currentInterval) clearInterval(currentInterval);
+
     currentTimeout = setTimeout(() => {
       loseLife();
     }, survivalTime * 1000);
+
+    currentInterval = setInterval(() => {
+      updateCountdownDisplay();
+    }, 100);
   }
 
   function loseLife() {
     lives--;
+    if (currentInterval) clearInterval(currentInterval);
     if (lives <= 0) {
       endSurvival();
     } else {
@@ -101,6 +121,7 @@ function survivalMode() {
 
   function endSurvival() {
     gameOver = true;
+    if (currentInterval) clearInterval(currentInterval);
     $("#countdown .countdown-value").html("Perdu !");
     $("#startButton").show().text("Rejouer").off().click(() => window.location.reload());
   }
@@ -110,6 +131,7 @@ function survivalMode() {
     box.onclick = (e) => {
       if (gameOver) return;
       if (e.target.id === currentBox) {
+        if (currentInterval) clearInterval(currentInterval);
         score.innerHTML = parseInt(score.innerHTML) + 1;
         survivalTime = Math.max(minTime, survivalTime - timeDecrease);
         nextRound();
