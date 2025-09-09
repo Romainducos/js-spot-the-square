@@ -1,4 +1,4 @@
-import {currentBox, randomizeBox} from './boxRandomizer.js';
+import {currentBox, randomizeBox, randomizedBox} from './boxRandomizer.js';
 
 function getDurationFromUrl() {
   const params = new URLSearchParams(window.location.search);
@@ -45,6 +45,8 @@ $("#startButton").click(function () {
     timer.pause();
     timerRunning = false;
     $(this).text("Commencer");
+
+    randomizedBox.innerHTML = "??"
   }
 
 });
