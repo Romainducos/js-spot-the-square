@@ -89,7 +89,7 @@ footer {
   align-items: center;
   justify-content: center;
   gap: 5px;
-  position: fixed;
+  position: absolute;
   bottom: 5px;
   width: 100%;
 }
@@ -124,6 +124,18 @@ footer {
   text-align: center;
   padding: 20px;
   background-color: rgb(228, 228, 228);
+}
+
+@media only screen and (max-height: 700px) {
+  .column > * {
+    padding: 14px;
+  }
+}
+
+@media only screen and (max-height: 550px) {
+  footer {
+    display: none;
+  }
 }
 
 .colored-box {
