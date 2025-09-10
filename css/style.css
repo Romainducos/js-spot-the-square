@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Anonymous+Pro&family=Architects+Daughter&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Outfit:wght@100..900&family=Roboto:ital@0;1&family=WDXL+Lubrifont+TC&family=Young+Serif&display=swap");
 @import url(reset.css);
+@import url(style.css);
 
 html,
 body {
@@ -14,6 +14,7 @@ body {
   align-items: center;
 }
 
+/* Typography */
 h1 {
   font-size: 36px;
   font-weight: bold;
@@ -23,41 +24,23 @@ h3 {
   font-size: 16px;
 }
 
-a {
-  text-decoration: none;
-}
-
-header > img {
-  margin-bottom: 12px;
-}
-
-.header-link {
-  color: rgb(26, 126, 226);
-  background: none;
-  font-size: 14px;
-  text-transform: uppercase;
-}
-.header-link:hover {
-  opacity: 0.8;
-}
-
 strong {
   font-weight: bold;
 }
 
-#randomized-box {
-  text-align: center;
-  margin: 16px;
-  font-weight: bold;
-  font-size: 2em;
+a {
+  text-decoration: none;
 }
 
-.main-menu {
-  margin: 36px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
+/* Buttons & Links */
+button {
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
 }
 
 .blue-button {
@@ -77,12 +60,46 @@ strong {
   cursor: pointer;
 }
 
+.header-link {
+  color: rgb(26, 126, 226);
+  background: none;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.header-link:hover {
+  opacity: 0.8;
+}
+
+/* Main */
+.main-menu {
+  margin: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+#randomized-box {
+  text-align: center;
+  margin: 16px;
+  font-weight: bold;
+  font-size: 2em;
+}
 header {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 5px;
   margin-top: 36px;
+}
+
+header > img {
+  margin-bottom: 12px;
+}
+
+#homepage-logo-header {
+  width: 60px;
 }
 
 footer {
@@ -96,14 +113,11 @@ footer {
   width: 100%;
 }
 
-#homepage-logo-header {
-  width: 60px;
-}
-
 #homepage-logo-footer {
   width: 30px;
 }
 
+/* ChessBoard */
 .chessboard-container {
   display: flex;
   justify-content: center;
@@ -128,31 +142,11 @@ footer {
   background-color: rgb(228, 228, 228);
 }
 
-@media only screen and (max-height: 700px) {
-  .column > * {
-    padding: 14px;
-  }
-}
-
-@media only screen and (max-height: 600px) {
-  footer {
-    display: none;
-  }
-}
-
 .colored-box {
   background-color: dodgerblue;
 }
 
-button {
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-}
-
-button:hover {
-  opacity: 0.8;
-}
+/* Score & Countdown */
 #countdown {
   margin: 24px 0px 12px 0px;
 }
@@ -168,4 +162,17 @@ button:hover {
 
 #best-score {
   color: rgb(158, 158, 158);
+}
+
+/* Responsive */
+@media only screen and (max-height: 700px) {
+  .column > * {
+    padding: 14px;
+  }
+}
+
+@media only screen and (max-height: 600px) {
+  footer {
+    display: none;
+  }
 }

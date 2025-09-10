@@ -1,3 +1,4 @@
+<<<<<<< HEAD:js/index.js
 // --- IMPORTS ---
 import { currentBox, randomizeBox, randomizedBox } from "../js/boxRandomizer.js";
 
@@ -80,6 +81,9 @@ function chronoMode() {
     };
   }
 }
+=======
+import { score, allTheBox, randomizeBox, currentBox } from "./setup.js";
+>>>>>>> files/tree:js/survivalMode.js
 
 // --- SURVIVAL MODE ---
 function survivalMode() {
@@ -93,7 +97,13 @@ function survivalMode() {
   let roundStart = null;
 
   score.innerHTML = "0";
+<<<<<<< HEAD:js/index.js
   $("#countdown .countdown-value").html(survivalTime.toFixed(2) + "s | Vies : " + lives);
+=======
+  $("#countdown .countdown-value").html(
+    survivalTime.toFixed(2) + "s | Vies : " + lives
+  );
+>>>>>>> files/tree:js/survivalMode.js
 
   function updateCountdownDisplay() {
     if (!roundStart) return;
@@ -155,3 +165,5 @@ function survivalMode() {
 
   nextRound();
 }
+
+export { survivalMode };
