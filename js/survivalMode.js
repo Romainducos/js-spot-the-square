@@ -1,4 +1,13 @@
-import { score, allTheBox, currentBox, randomizeBox } from "./setup.js";
+import {
+  score,
+  allTheBox,
+  currentBox,
+  randomizeBox,
+  mode,
+  highscoreDisplayer,
+  initializeHighscore,
+  updateHighscore,
+} from "./setup.js";
 
 export function survivalMode() {
   let survivalTime = 3;
@@ -75,6 +84,7 @@ export function survivalMode() {
         if (currentInterval) clearInterval(currentInterval);
         score.innerHTML = parseInt(score.innerHTML) + 1;
         survivalTime = Math.max(minTime, survivalTime - timeDecrease);
+        updateHighscore(mode);
         nextRound();
       } else {
         loseLife();
