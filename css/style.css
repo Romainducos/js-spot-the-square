@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Anonymous+Pro&family=Architects+Daughter&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Outfit:wght@100..900&family=Roboto:ital@0;1&family=WDXL+Lubrifont+TC&family=Young+Serif&display=swap");
 @import url(reset.css);
 
 html,
@@ -7,7 +8,7 @@ body {
 }
 
 body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Roboto", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -48,6 +49,7 @@ strong {
   text-align: center;
   margin: 16px;
   font-weight: bold;
+  font-size: 2em;
 }
 
 .main-menu {
@@ -89,7 +91,7 @@ footer {
   align-items: center;
   justify-content: center;
   gap: 5px;
-  position: fixed;
+  position: absolute;
   bottom: 5px;
   width: 100%;
 }
@@ -126,6 +128,18 @@ footer {
   background-color: rgb(228, 228, 228);
 }
 
+@media only screen and (max-height: 700px) {
+  .column > * {
+    padding: 14px;
+  }
+}
+
+@media only screen and (max-height: 600px) {
+  footer {
+    display: none;
+  }
+}
+
 .colored-box {
   background-color: dodgerblue;
 }
@@ -145,4 +159,13 @@ button:hover {
 
 #score-menu {
   text-align: center;
+}
+
+#startButton {
+  margin-top: 24px;
+  text-transform: uppercase;
+}
+
+#best-score {
+  color: rgb(158, 158, 158);
 }
