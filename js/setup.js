@@ -5,6 +5,7 @@ et stocke les modes de jeu (chrono1/2 ou survie).
 */
 
 import { currentBox, randomizeBox, randomizedBox } from "./boxRandomizer.js";
+import {highscoreDisplayer, initializeHighscore, updateHighscore} from "./highscore.js";
 
 const params = new URLSearchParams(window.location.search);
 const mode = params.get("mode");
@@ -20,4 +21,7 @@ export {
   randomizeBox,
   currentBox,
   randomizedBox,
+  highscoreDisplayer,
+  initializeHighscore,
+  updateHighscore
 };

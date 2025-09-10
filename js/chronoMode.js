@@ -5,9 +5,26 @@ import {
   randomizeBox,
   currentBox,
   mode,
+<<<<<<< HEAD
 } from "./setup.js";
 
 function chronoMode() {
+=======
+  highscoreDisplayer,
+  initializeHighscore,
+  updateHighscore
+} from "./setup.js";
+
+function chronoMode() {
+
+  if (mode === "1"){
+    highscoreDisplayer.innerHTML = sessionStorage.highscore1Min
+  }
+  else if (mode === "2"){
+    highscoreDisplayer.innerHTML = sessionStorage.highscore2Min
+  }
+
+>>>>>>> feature/save_score
   console.info(mode);
   $("#countdown .countdown-value").html(
     mode.toString().padStart(2, "0") + ":00"
@@ -53,6 +70,7 @@ function chronoMode() {
       if (e.target.id === currentBox) {
         randomizeBox();
         score.innerHTML = parseInt(score.innerHTML) + 1;
+        updateHighscore(mode);
       }
     };
   }
