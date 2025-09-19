@@ -82,9 +82,13 @@ button:hover {
 
 #randomized-box {
   text-align: center;
-  margin: 16px;
+  margin-top:12px ;
   font-weight: bold;
   font-size: 2em;
+  padding: 4px 14px;
+  background-color: rgb(108, 181, 255);
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 2px 2px 2px
 }
 header {
   display: flex;
@@ -135,7 +139,7 @@ footer {
   flex-direction: column-reverse;
 }
 
-.column > * {
+.case {
   text-align: center;
   padding: 20px;
   background-color: rgb(228, 228, 228);
@@ -147,11 +151,21 @@ footer {
 
 /* Score & Countdown */
 #countdown {
-  margin: 24px 0px 12px 0px;
+  margin: 12px 0px;
+  padding: 4px 14px;
+  font-size: 1.5em;
+  border-radius: 10px;
 }
 
 #score-menu {
   text-align: center;
+  margin-top: 24px;
+}
+
+#score {
+  font-size: 1.5em;
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
 #startButton {
