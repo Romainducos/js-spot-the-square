@@ -108,9 +108,8 @@ footer {
   align-items: center;
   justify-content: center;
   gap: 5px;
-  position: absolute;
-  bottom: 5px;
   width: 100%;
+  margin-top: auto; /* ça le pousse en bas*/
 }
 
 #homepage-logo-footer {
@@ -156,7 +155,7 @@ footer {
 }
 
 #startButton {
-  margin-top: 24px;
+  margin: 24px 0px;
   text-transform: uppercase;
 }
 
@@ -168,11 +167,5 @@ footer {
 @media only screen and (max-height: 700px) {
   .column > * {
     padding: 14px;
-  }
-}
-
-@media only screen and (max-height: 600px) {
-  footer {
-    display: none;
   }
 }
