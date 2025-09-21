@@ -1,6 +1,6 @@
 // Fichier principale qui réuni tout les autres modules et qui lance.
 
-import { mode, initializeHighscore, highscoreDisplayer } from "./setup.js";
+import { mode, initializeHighscore, highscoreDisplayer,resetHighscore } from "./setup.js";
 import { chronoMode } from "./chronoMode.js";
 import { survivalMode } from "./survivalMode.js";
 
@@ -13,7 +13,7 @@ initializeHighscore()
 if (mode === "survival") {
   /* Set highscore displayer to current survival highscore (highscore displayer is set in chronoMode.js
   if player selects chrono game mode)*/
-  highscoreDisplayer.innerHTML = sessionStorage.highscoreSurvival
+  highscoreDisplayer.innerHTML = localStorage.highscoreSurvival
   $("#countdown .countdown-value").html("3.00s | Vies : 3");
   $("#startButton")
     .off()

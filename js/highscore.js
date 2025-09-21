@@ -3,50 +3,44 @@ import {score} from "./setup.js";
 export const highscoreDisplayer = document.getElementById("best-score-number");
 
 export function initializeHighscore(){
-    if (!sessionStorage.getItem('highscore1Min')){
-        sessionStorage.setItem('highscore1Min','0');
+    if (!localStorage.getItem('highscore1Min')){
+        localStorage.setItem('highscore1Min','0');
     }
-    if (!sessionStorage.getItem('highscore2Min')){
-        sessionStorage.setItem('highscore2Min','0');
+    if (!localStorage.getItem('highscore2Min')){
+        localStorage.setItem('highscore2Min','0');
     }
-    if (!sessionStorage.getItem('highscoreSurvival')){
-        sessionStorage.setItem('highscoreSurvival','0');
+    if (!localStorage.getItem('highscoreSurvival')){
+        localStorage.setItem('highscoreSurvival','0');
     }
+}
+
+export function resetHighscore(){
+    localStorage.highscore1Min = 0;
+    localStorage.highscore2Min = 0;
+    highscoreSurvival = 0;
 }
 
 export function updateHighscore(mode){
     if (mode === "1"){
-        sessionStorage.highscore1Min = score.innerHTML;
-        highscoreDisplayer.innerHTML = sessionStorage.highscore1Min
+        if (score.innerHTML > localStorage.highscore1Min){
+            localStorage.highscore1Min = score.innerHTML;
+            highscoreDisplayer.innerHTML = localStorage.highscore1Min
+        }
     }
     else if (mode === "2"){
-        sessionStorage.highscore2Min = score.innerHTML;
-        highscoreDisplayer.innerHTML = sessionStorage.highscore2Min
+        if (score.innerHTML > localStorage.highscore2Min){
+            localStorage.highscore1Min = score.innerHTML;
+            highscoreDisplayer.innerHTML = localStorage.highscore2Min
+        }
     }
     else if (mode === "survival"){
-        sessionStorage.highscoreSurvival = score.innerHTML;
-        highscoreDisplayer.innerHTML = sessionStorage.highscoreSurvival
+        if (score.innerHTML > localStorage.highscoreSurvival){
+            localStorage.highscoreSurvival = score.innerHTML;
+            highscoreDisplayer.innerHTML = localStorage.highscoreSurvival
+        }
     }
     else{
         console.error("Error: not a proper game mode")
     }
-    /*
-    switch(mode){
-        case "1":
-            if (parseInt(score.innerHTML)> parseInt(sessionStorage.highscore1Min)){
-                sessionStorage.highscore1Min = score.innerHTML;
-                highscoreDisplayer.innerHTML = sessionStorage.highscore1Min
-            }
-        case "2":
-            if (parseInt(score.innerHTML)> parseInt(sessionStorage.highscore2Min)){
-                sessionStorage.highscore2Min = score.innerHTML;
-                highscoreDisplayer.innerHTML = sessionStorage.highscore2Min
-            }
-        case "survival":
-            if (parseInt(score.innerHTML)> parseInt(sessionStorage.highscoreSurvival)){
-                sessionStorage.highscoreSurvival = score.innerHTML;
-                highscoreDisplayer.innerHTML = sessionStorage.highscoreSurvival
-            }
-    }
-            */
+    
 }

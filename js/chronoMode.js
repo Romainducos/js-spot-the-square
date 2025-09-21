@@ -12,9 +12,9 @@ import {
 
 function chronoMode() {
   if (mode === "1") {
-    highscoreDisplayer.innerHTML = sessionStorage.highscore1Min;
+    highscoreDisplayer.innerHTML = localStorage.highscore1Min;
   } else if (mode === "2") {
-    highscoreDisplayer.innerHTML = sessionStorage.highscore2Min;
+    highscoreDisplayer.innerHTML = localStorage.highscore2Min;
   }
 
   console.info(mode);
