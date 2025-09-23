@@ -1,4 +1,5 @@
 @import url(reset.css);
+@import url(style.css);
 
 html,
 body {
@@ -7,12 +8,13 @@ body {
 }
 
 body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Roboto", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+/* Typography */
 h1 {
   font-size: 36px;
   font-weight: bold;
@@ -22,40 +24,23 @@ h3 {
   font-size: 16px;
 }
 
-a {
-  text-decoration: none;
-}
-
-header > img {
-  margin-bottom: 12px;
-}
-
-.header-link {
-  color: rgb(26, 126, 226);
-  background: none;
-  font-size: 14px;
-  text-transform: uppercase;
-}
-.header-link:hover {
-  opacity: 0.8;
-}
-
 strong {
   font-weight: bold;
 }
 
-#randomized-box {
-  text-align: center;
-  margin: 16px;
-  font-weight: bold;
+a {
+  text-decoration: none;
 }
 
-.main-menu {
-  margin: 36px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
+/* Buttons & Links */
+button {
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
 }
 
 .blue-button {
@@ -75,6 +60,36 @@ strong {
   cursor: pointer;
 }
 
+.header-link {
+  color: rgb(26, 126, 226);
+  background: none;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.header-link:hover {
+  opacity: 0.8;
+}
+
+/* Main */
+.main-menu {
+  margin: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+#randomized-box {
+  text-align: center;
+  margin-top:12px ;
+  font-weight: bold;
+  font-size: 2em;
+  padding: 4px 14px;
+  background-color: rgb(108, 181, 255);
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 2px 2px 2px
+}
 header {
   display: flex;
   flex-direction: column;
@@ -83,25 +98,29 @@ header {
   margin-top: 36px;
 }
 
-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  position: fixed;
-  bottom: 5px;
-  width: 100%;
+header > img {
+  margin-bottom: 12px;
 }
 
 #homepage-logo-header {
   width: 60px;
 }
 
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 100%;
+  margin-top: auto; /* ça le pousse en bas*/
+}
+
 #homepage-logo-footer {
   width: 30px;
 }
 
+/* ChessBoard */
 .chessboard-container {
   display: flex;
   justify-content: center;
@@ -120,7 +139,7 @@ footer {
   flex-direction: column-reverse;
 }
 
-.column > * {
+.case {
   text-align: center;
   padding: 20px;
   background-color: rgb(228, 228, 228);
@@ -130,19 +149,37 @@ footer {
   background-color: dodgerblue;
 }
 
-button {
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-}
-
-button:hover {
-  opacity: 0.8;
-}
+/* Score & Countdown */
 #countdown {
-  margin: 24px 0px 12px 0px;
+  margin: 12px 0px;
+  padding: 4px 14px;
+  font-size: 1.5em;
+  border-radius: 10px;
 }
 
 #score-menu {
   text-align: center;
+  margin-top: 24px;
+}
+
+#score {
+  font-size: 1.5em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+#startButton {
+  margin: 24px 0px;
+  text-transform: uppercase;
+}
+
+#best-score {
+  color: rgb(158, 158, 158);
+}
+
+/* Responsive */
+@media only screen and (max-height: 700px) {
+  .column > * {
+    padding: 14px;
+  }
 }

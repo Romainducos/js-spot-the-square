@@ -1,122 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/style.css" />
-    <title>Projet spot the square</title>
-  </head>
-  <body>
-    <header>
-      <img src="../images/chess_logo.png" id="homepage-logo-header" />
-      <a href="index.html" class="header-link">revenir à l'accueil</a>
-      <button id="startButton" class="header-link">commencer</button>
-    </header>
 
-    <h2 id="randomized-box">??</h2>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/style.css" />
 
-    <div class="chessboard-container">
-      <div class="chessboard">
-        <div class="column">
-          <button type="button" id="a1" class="colored-box"></button>
-          <button type="button" id="a2"></button>
-          <button type="button" id="a3" class="colored-box"></button>
-          <button type="button" id="a4"></button>
-          <button type="button" id="a5" class="colored-box"></button>
-          <button type="button" id="a6"></button>
-          <button type="button" id="a7" class="colored-box"></button>
-          <button type="button" id="a8"></button>
-        </div>
-        <div class="column">
-          <button type="button" id="b1"></button>
-          <button type="button" id="b2" class="colored-box"></button>
-          <button type="button" id="b3"></button>
-          <button type="button" id="b4" class="colored-box"></button>
-          <button type="button" id="b5"></button>
-          <button type="button" id="b6" class="colored-box"></button>
-          <button type="button" id="b7"></button>
-          <button type="button" id="b8" class="colored-box"></button>
-        </div>
-        <div class="column">
-          <button type="button" id="c1" class="colored-box"></button>
-          <button type="button" id="c2"></button>
-          <button type="button" id="c3" class="colored-box"></button>
-          <button type="button" id="c4"></button>
-          <button type="button" id="c5" class="colored-box"></button>
-          <button type="button" id="c6"></button>
-          <button type="button" id="c7" class="colored-box"></button>
-          <button type="button" id="c8"></button>
-        </div>
-        <div class="column">
-          <button type="button" id="d1"></button>
-          <button type="button" id="d2" class="colored-box"></button>
-          <button type="button" id="d3"></button>
-          <button type="button" id="d4" class="colored-box"></button>
-          <button type="button" id="d5"></button>
-          <button type="button" id="d6" class="colored-box"></button>
-          <button type="button" id="d7"></button>
-          <button type="button" id="d8" class="colored-box"></button>
-        </div>
-        <div class="column">
-          <button type="button" id="e1" class="colored-box"></button>
-          <button type="button" id="e2"></button>
-          <button type="button" id="e3" class="colored-box"></button>
-          <button type="button" id="e4"></button>
-          <button type="button" id="e5" class="colored-box"></button>
-          <button type="button" id="e6"></button>
-          <button type="button" id="e7" class="colored-box"></button>
-          <button type="button" id="e8"></button>
-        </div>
-        <div class="column">
-          <button type="button" id="f1"></button>
-          <button type="button" id="f2" class="colored-box"></button>
-          <button type="button" id="f3"></button>
-          <button type="button" id="f4" class="colored-box"></button>
-          <button type="button" id="f5"></button>
-          <button type="button" id="f6" class="colored-box"></button>
-          <button type="button" id="f7"></button>
-          <button type="button" id="f8" class="colored-box"></button>
-        </div>
-        <div class="column">
-          <button type="button" id="g1" class="colored-box"></button>
-          <button type="button" id="g2"></button>
-          <button type="button" id="g3" class="colored-box"></button>
-          <button type="button" id="g4"></button>
-          <button type="button" id="g5" class="colored-box"></button>
-          <button type="button" id="g6"></button>
-          <button type="button" id="g7" class="colored-box"></button>
-          <button type="button" id="g8"></button>
-        </div>
-        <div class="column">
-          <button type="button" id="h1"></button>
-          <button type="button" id="h2" class="colored-box"></button>
-          <button type="button" id="h3"></button>
-          <button type="button" id="h4" class="colored-box"></button>
-          <button type="button" id="h5"></button>
-          <button type="button" id="h6" class="colored-box"></button>
-          <button type="button" id="h7"></button>
-          <button type="button" id="h8" class="colored-box"></button>
-        </div>
+  <title>Projet spot the square</title>
+</head>
+
+<body>
+  <header>
+    <img src="../images/chess_logo.png" id="homepage-logo-header" />
+    <a href="index.html" class="header-link">revenir à l'accueil</a>
+  </header>
+
+  <h2 id="randomized-box">??</h2>
+
+  <div id="countdown">
+    <div class="countdown-value">00:00</div>
+  </div>
+
+  <div class="chessboard-container">
+    <div class="chessboard">
+      <!-- Génération d'un échiquier 8x8 complet -->
+      <div class="column">
+        <button type="button" id="a1" class="case colored-box"></button>
+        <button type="button" id="a2" class="case"></button>
+        <button type="button" id="a3" class="case colored-box"></button>
+        <button type="button" id="a4" class="case"></button>
+        <button type="button" id="a5" class="case colored-box"></button>
+        <button type="button" id="a6" class="case"></button>
+        <button type="button" id="a7" class="case colored-box"></button>
+        <button type="button" id="a8" class="case"></button>
+      </div>
+      <div class="column">
+        <button type="button" id="b1" class="case"></button>
+        <button type="button" id="b2" class="case colored-box"></button>
+        <button type="button" id="b3" class="case"></button>
+        <button type="button" id="b4" class="case colored-box"></button>
+        <button type="button" id="b5" class="case"></button>
+        <button type="button" id="b6" class="case colored-box"></button>
+        <button type="button" id="b7" class="case"></button>
+        <button type="button" id="b8" class="case colored-box"></button>
+      </div>
+      <div class="column">
+        <button type="button" id="c1" class="case colored-box"></button>
+        <button type="button" id="c2" class="case"></button>
+        <button type="button" id="c3" class="case colored-box"></button>
+        <button type="button" id="c4" class="case"></button>
+        <button type="button" id="c5" class="case colored-box"></button>
+        <button type="button" id="c6" class="case"></button>
+        <button type="button" id="c7" class="case colored-box"></button>
+        <button type="button" id="c8" class="case"></button>
+      </div>
+      <div class="column">
+        <button type="button" id="d1" class="case"></button>
+        <button type="button" id="d2" class="case colored-box"></button>
+        <button type="button" id="d3" class="case"></button>
+        <button type="button" id="d4" class="case colored-box"></button>
+        <button type="button" id="d5" class="case"></button>
+        <button type="button" id="d6" class="case colored-box"></button>
+        <button type="button" id="d7" class="case"></button>
+        <button type="button" id="d8" class="case colored-box"></button>
+      </div>
+      <div class="column">
+        <button type="button" id="e1" class="case colored-box"></button>
+        <button type="button" id="e2" class="case"></button>
+        <button type="button" id="e3" class="case colored-box"></button>
+        <button type="button" id="e4" class="case"></button>
+        <button type="button" id="e5" class="case colored-box"></button>
+        <button type="button" id="e6" class="case"></button>
+        <button type="button" id="e7" class="case colored-box"></button>
+        <button type="button" id="e8" class="case"></button>
+      </div>
+      <div class="column">
+        <button type="button" id="f1" class="case"></button>
+        <button type="button" id="f2" class="case colored-box"></button>
+        <button type="button" id="f3" class="case"></button>
+        <button type="button" id="f4" class="case colored-box"></button>
+        <button type="button" id="f5" class="case"></button>
+        <button type="button" id="f6" class="case colored-box"></button>
+        <button type="button" id="f7" class="case"></button>
+        <button type="button" id="f8" class="case colored-box"></button>
+      </div>
+      <div class="column">
+        <button type="button" id="g1" class="case colored-box"></button>
+        <button type="button" id="g2" class="case"></button>
+        <button type="button" id="g3" class="case colored-box"></button>
+        <button type="button" id="g4" class="case"></button>
+        <button type="button" id="g5" class="case colored-box"></button>
+        <button type="button" id="g6" class="case"></button>
+        <button type="button" id="g7" class="case colored-box"></button>
+        <button type="button" id="g8" class="case"></button>
+      </div>
+      <div class="column">
+        <button type="button" id="h1" class="case"></button>
+        <button type="button" id="h2" class="case colored-box"></button>
+        <button type="button" id="h3" class="case"></button>
+        <button type="button" id="h4" class="case colored-box"></button>
+        <button type="button" id="h5" class="case"></button>
+        <button type="button" id="h6" class="case colored-box"></button>
+        <button type="button" id="h7" class="case"></button>
+        <button type="button" id="h8" class="case colored-box"></button>
       </div>
     </div>
+  </div>
 
-    <div id="countdown">
-      <div class="countdown-value">00:00</div>
-    </div>
+  <div id="score-menu">
+    <p id="score">Score: <span id="score-number">0</span></p>
+    <p id="best-score">
+      Meilleur score: <span id="best-score-number">0</span>
+    </p>
+  </div>
 
-    <div id="score-menu">
-      <p id="score">Score: <span id="score-number">0</span></p>
-      <p id="best-score">
-        Meilleur score: <span id="best-score-number">0</span>
-      </p>
-    </div>
+  <button id="startButton" class="blue-button">commencer</button>
 
-    <footer>
-      <img src="../images/chess_logo.png" id="homepage-logo-footer" />
-      <h3><strong>SPOT THE SQUARE</strong> 2025</h3>
-    </footer>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/easytimer.js@4.5.4/dist/easytimer.min.js"></script>
-    <script src="../js/index.js"></script>
-  </body>
+  <footer>
+    <img src="../images/chess_logo.png" id="homepage-logo-footer" />
+    <h3><strong>SPOT THE SQUARE</strong> 2025</h3>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/easytimer.js@4.5.4/dist/easytimer.min.js"></script>
+  <script src="../js/main.js" type="module"></script>
+</body>
+
 </html>
