@@ -9,7 +9,7 @@ initializeHighscore();
 
 // Lancement du Jeu
 const countdownValue = document.querySelector("#countdown .countdown-value");
-const startButton = document.getElementById("startButton");
+const startButton = document.getElementById("start-button");
 
 if (mode === "survival") {
   // Affiche le highscore survival
