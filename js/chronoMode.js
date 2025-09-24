@@ -25,11 +25,11 @@ export function chronoMode() {
   let timerRunning = false;
 
   // Bouton démarrer / recommencer
-  const startButton = document.getElementById("start-button");
+  let startButton = document.getElementById("start-button");
   startButton.replaceWith(startButton.cloneNode(true)); // supprime anciens listeners
-  const newStartButton = document.getElementById("start-button");
+  startButton = document.getElementById("start-button");
 
-  newStartButton.addEventListener("click", () => {
+  startButton.addEventListener("click", () => {
     score.textContent = "0";
 
     if (!timerRunning) {
@@ -38,7 +38,7 @@ export function chronoMode() {
         startValues: { minutes: parseInt(mode) },
       });
       timerRunning = true;
-      newStartButton.textContent = "Arrêter";
+      startButton.textContent = "Arrêter";
       randomizeBox();
     } else {
 
@@ -46,7 +46,7 @@ export function chronoMode() {
       countdownValue.textContent = mode.toString().padStart(2, "0") + ":00";
       timer.pause();
       timerRunning = false;
-      newStartButton.textContent = "Commencer";
+      startButton.textContent = "Commencer";
     }
   });
 
@@ -61,7 +61,7 @@ export function chronoMode() {
   timer.addEventListener("targetAchieved", function () {
     countdownValue.textContent = "GG";
     timerRunning = false;
-    newStartButton.textContent = "Commencer";
+    startButton.textContent = "Commencer";
   });
 
   // Listeners sur les cases
