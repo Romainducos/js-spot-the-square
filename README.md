@@ -13,3 +13,5 @@ Upon starting the game, a random square positions will be generated and your goa
 An additional "Survival Mode" is also available where you are given three lives. In this mode you have three seconds to find each square on the chessboard. As these three seconds run out, you will loose on life. The game ends when you run out of life.
 
 So ready, set, GO! Train yourself with this app and beat your highscore!
+![screen-jeu-spot-the-square](https://github.com/user-attachments/assets/49cfebcb-394b-4451-a02b-6002a9beab61)
+<img width="512" height="209" alt="screen-page-spot-the-square" src="https://github.com/user-attachments/assets/189dabe6-4cfb-48c0-acaf-1874fbe37203" />
