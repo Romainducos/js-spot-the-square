@@ -14,5 +14,6 @@ An additional "Survival Mode" is also available where you are given three lives.
 
 So ready, set, GO! Train yourself with this app and beat your highscore!
 
-![screen-jeu-spot-the-square](https://github.com/user-attachments/assets/49cfebcb-394b-4451-a02b-6002a9beab61)
 <img width="512" height="209" alt="screen-page-spot-the-square" src="https://github.com/user-attachments/assets/189dabe6-4cfb-48c0-acaf-1874fbe37203" />
+<img width="660" height="480" alt="screen-jeu-sts" src="https://github.com/user-attachments/assets/6e628a74-db5f-4258-8301-43c71d625a08" />
+
